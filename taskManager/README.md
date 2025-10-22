@@ -65,59 +65,59 @@ When you run the application, you'll see the following menu:
 6. Exit
 ```
 
-### Funcionalidades
+### Features
 
-#### 1️⃣ Agregar Tarea Manual
-Permite agregar una tarea especificando manualmente la descripción y prioridad.
+#### 1️⃣ Add Task Manually
+Allows you to add a task by manually specifying the description and priority.
 
 ```
-Opción: 1
-Enter task description: Completar informe mensual
+Option: 1
+Enter task description: Complete monthly report
 Enter task priority (Low, Medium, High): High
 ```
 
-#### 2️⃣ Agregar Tarea con Asistencia de IA
-La IA descompone automáticamente una tarea compleja en subtareas más pequeñas.
+#### 2️⃣ Add Task with AI Assistance
+AI automatically decomposes a complex task into smaller subtasks.
 
 ```
-Opción: 2
-Enter task description: Desarrollar una aplicación web completa
+Option: 2
+Enter task description: Develop a complete web application
 ```
 
-La IA generará subtareas como:
-- Diseñar la arquitectura del sistema
-- Crear la base de datos
-- Desarrollar el backend
-- Implementar el frontend
-- Realizar pruebas
-- Desplegar la aplicación
+AI will generate subtasks such as:
+- Design system architecture
+- Create database
+- Develop backend
+- Implement frontend
+- Perform testing
+- Deploy application
 
-#### 3️⃣ Listar Tareas
-Muestra todas las tareas con su estado, ID, descripción y prioridad.
-
-```
-[ ] (ID: 1) Completar informe mensual - Priority: High
-[✓] (ID: 2) Revisar correos - Priority: Medium
-```
-
-#### 4️⃣ Completar Tarea
-Marca una tarea como completada usando su ID.
+#### 3️⃣ List Tasks
+Displays all tasks with their status, ID, description, and priority.
 
 ```
-Opción: 4
+[ ] (ID: 1) Complete monthly report - Priority: High
+[✓] (ID: 2) Review emails - Priority: Medium
+```
+
+#### 4️⃣ Complete Task
+Marks a task as completed using its ID.
+
+```
+Option: 4
 Enter task ID to complete: 1
-Task completed: [✓] (ID: 1) Completar informe mensual - Priority: High
+Task completed: [✓] (ID: 1) Complete monthly report - Priority: High
 ```
 
-#### 5️⃣ Eliminar Tarea
-Elimina permanentemente una tarea del sistema.
+#### 5️⃣ Delete Task
+Permanently deletes a task from the system.
 
 ```
-Opción: 5
+Option: 5
 Enter task ID to delete: 1
 ```
 
-## 🏗️ Estructura del Proyecto
+## 🏗️ Project Structure
 
 ```
 taskManager/
