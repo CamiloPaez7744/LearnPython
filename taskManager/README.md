@@ -121,131 +121,131 @@ Enter task ID to delete: 1
 
 ```
 taskManager/
-├── main.py                 # Punto de entrada de la aplicación
-├── task_manager.py         # Lógica principal de gestión de tareas
-├── ai_service.py          # Integración con OpenAI API
-├── tasks.json             # Archivo de persistencia de datos
-├── requirements.txt       # Dependencias del proyecto
-├── README.md              # Documentación del proyecto
-├── .env                   # Variables de entorno (no incluido en git)
+├── main.py                 # Application entry point
+├── task_manager.py         # Main task management logic
+├── ai_service.py          # OpenAI API integration
+├── tasks.json             # Data persistence file
+├── requirements.txt       # Project dependencies
+├── README.md              # Project documentation
+├── .env                   # Environment variables (not included in git)
 └── tests/
-    └── test_task_manager.py  # Pruebas unitarias
+    └── test_task_manager.py  # Unit tests
 ```
 
-## 🧪 Pruebas
+## 🧪 Testing
 
-El proyecto incluye una suite completa de pruebas unitarias usando pytest.
+The project includes a complete unit test suite using pytest.
 
-### Ejecutar las pruebas
+### Run tests
 
 ```bash
 pytest tests/
 ```
 
-### Ejecutar con cobertura
+### Run with coverage
 
 ```bash
 pytest --cov=. tests/
 ```
 
-### Casos de prueba incluidos
+### Included test cases
 
-- ✅ Agregar y obtener tareas
-- ✅ Completar tareas y verificar persistencia
-- ✅ Eliminar tareas
-- ✅ Incremento automático de IDs
-- ✅ Manejo de archivos corruptos o faltantes
-- ✅ Formato correcto de archivos JSON
+- ✅ Add and retrieve tasks
+- ✅ Complete tasks and verify persistence
+- ✅ Delete tasks
+- ✅ Automatic ID increment
+- ✅ Handle corrupt or missing files
+- ✅ Correct JSON file format
 
-## 📦 Dependencias Principales
+## 📦 Main Dependencies
 
-- **openai** (2.6.0): Cliente oficial de OpenAI para integración con GPT-4
-- **python-dotenv** (1.1.1): Gestión de variables de entorno
-- **pytest** (implícito): Framework de pruebas
-- **pydantic** (2.12.3): Validación de datos
-- **requests** (2.32.5): Cliente HTTP
+- **openai** (2.6.0): Official OpenAI client for GPT-4 integration
+- **python-dotenv** (1.1.1): Environment variable management
+- **pytest** (implicit): Testing framework
+- **pydantic** (2.12.3): Data validation
+- **requests** (2.32.5): HTTP client
 
-Ver `requirements.txt` para la lista completa de dependencias.
+See `requirements.txt` for the complete list of dependencies.
 
-## 🔧 Componentes del Sistema
+## 🔧 System Components
 
 ### TaskManager
-Clase principal que gestiona todas las operaciones CRUD de tareas:
-- `add_task(description, priority)`: Crea una nueva tarea
-- `list_tasks()`: Muestra todas las tareas
-- `complete_task(task_id)`: Marca una tarea como completada
-- `delete_task(task_id)`: Elimina una tarea
-- `save_tasks()`: Guarda tareas en JSON
-- `load_tasks()`: Carga tareas desde JSON
+Main class that manages all CRUD operations for tasks:
+- `add_task(description, priority)`: Creates a new task
+- `list_tasks()`: Displays all tasks
+- `complete_task(task_id)`: Marks a task as completed
+- `delete_task(task_id)`: Deletes a task
+- `save_tasks()`: Saves tasks to JSON
+- `load_tasks()`: Loads tasks from JSON
 
 ### Task
-Clase que representa una tarea individual:
-- `id`: Identificador único
-- `description`: Descripción de la tarea
-- `priority`: Prioridad (Low, Medium, High)
-- `completed`: Estado de completado (booleano)
+Class representing an individual task:
+- `id`: Unique identifier
+- `description`: Task description
+- `priority`: Priority (Low, Medium, High)
+- `completed`: Completion status (boolean)
 
 ### AI Service
-Servicio de integración con OpenAI:
-- `suggest_task_decomposition(task)`: Descompone tareas complejas
-- `create_simple_tasks(task)`: Simplifica tareas
-- `prioritize_tasks(tasks)`: Sugiere priorización
-- `generate_task_summary(task)`: Genera resúmenes
+OpenAI integration service:
+- `suggest_task_decomposition(task)`: Decomposes complex tasks
+- `create_simple_tasks(task)`: Simplifies tasks
+- `prioritize_tasks(tasks)`: Suggests prioritization
+- `generate_task_summary(task)`: Generates summaries
 
-## 🔐 Seguridad
+## 🔐 Security
 
-- Las API keys se almacenan en variables de entorno (archivo `.env`)
-- El archivo `.env` debe incluirse en `.gitignore`
-- Nunca compartas tu API key de OpenAI públicamente
+- API keys are stored in environment variables (`.env` file)
+- The `.env` file should be included in `.gitignore`
+- Never share your OpenAI API key publicly
 
-## 🤝 Contribuciones
+## 🤝 Contributing
 
-Las contribuciones son bienvenidas. Para contribuir:
+Contributions are welcome. To contribute:
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 Notas Importantes
+## 📝 Important Notes
 
-- Asegúrate de tener créditos suficientes en tu cuenta de OpenAI
-- El modelo GPT-4 tiene costos asociados por uso
-- Las tareas se guardan automáticamente en `tasks.json`
-- La aplicación maneja errores de archivos corruptos automáticamente
+- Make sure you have sufficient credits in your OpenAI account
+- GPT-4 model has associated usage costs
+- Tasks are automatically saved to `tasks.json`
+- The application automatically handles corrupt file errors
 
-## 🐛 Solución de Problemas
+## 🐛 Troubleshooting
 
 ### Error: "OpenAI API key is not set"
-**Solución:** Verifica que tu archivo `.env` existe y contiene tu API key correctamente:
+**Solution:** Verify that your `.env` file exists and contains your API key correctly:
 ```env
-OPENAI_API_KEY=tu_api_key_aqui
+OPENAI_API_KEY=your_api_key_here
 ```
 
 ### Error: "No module named 'openai'"
-**Solución:** Instala las dependencias:
+**Solution:** Install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Las tareas no persisten entre ejecuciones
-**Solución:** Verifica que el archivo `tasks.json` existe y tiene permisos de escritura.
+### Tasks don't persist between runs
+**Solution:** Verify that the `tasks.json` file exists and has write permissions.
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto es parte del repositorio de aprendizaje [LearnPython](https://github.com/CamiloPaez7744/LearnPython).
+This project is part of the [LearnPython](https://github.com/CamiloPaez7744/LearnPython) learning repository.
 
-## 👤 Autor
+## 👤 Author
 
 **Camilo Paez**
 - GitHub: [@CamiloPaez7744](https://github.com/CamiloPaez7744)
 
-## 🙏 Agradecimientos
+## 🙏 Acknowledgments
 
-- OpenAI por proporcionar la API de GPT-4
-- La comunidad de Python por las excelentes bibliotecas
+- OpenAI for providing the GPT-4 API
+- The Python community for excellent libraries
 
 ---
 
-⭐ Si este proyecto te resultó útil, considera darle una estrella en GitHub!
+⭐ If you found this project useful, consider giving it a star on GitHub!
